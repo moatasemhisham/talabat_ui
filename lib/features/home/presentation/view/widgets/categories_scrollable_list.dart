@@ -7,193 +7,119 @@ class CategoriesScrollableList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.1,
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          // crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Card(
-              // color: Colors.red,
-              margin: const EdgeInsets.symmetric(
-                horizontal: 5.0,
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      padding: EdgeInsetsDirectional.only(start: 8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        children: List.generate(
+          listCategoriesItem().length,
+              (index) =>
+              CategoryCard(
+                ctegorItem: listCategoriesItem()[index],
+                // title: listCategoriesItem()[index].title,
+                // imagePath: listCategoriesItem()[index].imagePath,
               ),
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 7, horizontal: 8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset(
-                      'assets/images/Ramadan.png',
-                    ),
-                    const Text(
-                      'Ramadan',
-                      style: TextStyle(
-                        fontSize: 14.0,
-                        // fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              // color: Colors.red,
-              margin: const EdgeInsets.symmetric(
-                horizontal: 5.0,
-              ),
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 7, horizontal: 8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset(
-                      'assets/images/Fastfood.png',
-                    ),
-                    const Text(
-                      'Fast Food',
-                      style: TextStyle(
-                        fontSize: 14.0,
-                        // fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              // color: Colors.red,
-              margin: const EdgeInsets.symmetric(
-                horizontal: 5.0,
-              ),
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 7, horizontal: 8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset(
-                      'assets/images/icons8_salami_pizza.png',
-                    ),
-                    const Text(
-                      'Pizza',
-                      style: TextStyle(
-                        fontSize: 14.0,
-                        // fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              // color: Colors.red,
-              margin: const EdgeInsets.symmetric(
-                horizontal: 5.0,
-              ),
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 7, horizontal: 8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset(
-                      'assets/images/desert.png',
-                    ),
-                    const Text(
-                      'Desert',
-                      style: TextStyle(
-                        fontSize: 14.0,
-                        // fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              // color: Colors.red,
-              margin: const EdgeInsets.symmetric(
-                horizontal: 5.0,
-              ),
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 7, horizontal: 8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset(
-                      'assets/images/Meat.png',
-                    ),
-                    const Text(
-                      'Meat',
-                      style: TextStyle(
-                        fontSize: 14.0,
-                        // fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              // color: Colors.red,
-              margin: const EdgeInsets.symmetric(
-                horizontal: 5.0,
-              ),
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 7, horizontal: 8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset(
-                      'assets/images/Fastfood.png',
-                    ),
-                    const Text(
-                      'Fast Food',
-                      style: TextStyle(
-                        fontSize: 14.0,
-                        // fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              // color: Colors.red,
-              margin: const EdgeInsets.symmetric(
-                horizontal: 5.0,
-              ),
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 7, horizontal: 8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset(
-                      'assets/images/Fastfood.png',
-                    ),
-                    const Text(
-                      'Fast Food',
-                      style: TextStyle(
-                        fontSize: 14.0,
-                        // fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
         ),
       ),
     );
   }
+
+  List<CategoriesItems> listCategoriesItem() {
+    return [
+      CategoriesItems(
+        title: 'Ramadan',
+        imagePath: 'assets/images/Ramadan.png',
+      ),
+      CategoriesItems(
+        title: 'Fast Food',
+        imagePath: 'assets/images/Fastfood.png',
+      ),
+      CategoriesItems(
+        title: 'Pizza',
+        imagePath: 'assets/images/icons8_salami_pizza.png',
+      ),
+      CategoriesItems(
+        title: 'Desert',
+        imagePath: 'assets/images/desert.png',
+      ),
+      CategoriesItems(
+        title: 'Meat',
+        imagePath: 'assets/images/Meat.png',
+      ),
+      CategoriesItems(
+        title: 'Ramadan',
+        imagePath: 'assets/images/Ramadan.png',
+      ),
+      CategoriesItems(
+        title: 'Fast Food',
+        imagePath: 'assets/images/Fastfood.png',
+      ),
+      CategoriesItems(
+        title: 'Pizza',
+        imagePath: 'assets/images/icons8_salami_pizza.png',
+      ),
+      CategoriesItems(
+        title: 'Desert',
+        imagePath: 'assets/images/desert.png',
+      ),
+      CategoriesItems(
+        title: 'Meat',
+        imagePath: 'assets/images/Meat.png',
+      ),
+    ];
+  }
+}
+
+class CategoryCard extends StatelessWidget {
+  // final String title;
+  // final String imagePath;
+  final CategoriesItems ctegorItem;
+
+
+  const CategoryCard({
+    Key? key, required this.ctegorItem,
+    // required this.title,
+    // required this.imagePath,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      // color: Colors.red,
+      margin: const EdgeInsets.symmetric(
+        horizontal: 8.0,
+      ),
+      elevation: 0.0,
+      color: Colors.transparent,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Image.asset(
+            ctegorItem.imagePath,
+            height: 50,
+            // width: ,
+          ),
+          const SizedBox(height: 5.0),
+          Text(
+            ctegorItem.title,
+            style: const TextStyle(
+              fontSize: 14.0,
+              // fontWeight: FontWeight.w400,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class CategoriesItems {
+  final String title;
+  final String imagePath;
+
+  CategoriesItems({required this.title, required this.imagePath});
 }

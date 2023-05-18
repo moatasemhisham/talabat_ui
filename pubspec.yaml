@@ -35,7 +35,9 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  flutter_svg: ^0.19.3
+  flutter_svg: ^1.0.0
+  scroll_loop_auto_scroll: ^0.0.2
+  dots_indicator: ^3.0.0
 
 
 dev_dependencies:
@@ -65,13 +67,15 @@ flutter:
     - assets/images/logo.png
     - assets/images/
     - assets/images/icons8_salami_pizza 2.svg
-    - assets/images/LogoSVG.svg
     - assets/images/icons8_salami_pizza.png
     - assets/images/Meat.png
     - assets/images/Ramadan.png
     - assets/images/Fastfood.png
     - assets/images/desert.png
     - assets/images/order_now.png
+    - assets/images/McDonald's.png
+    - assets/images/McLogo.png
+    - assets/images/mcLogoSvg.svg
 
   #   - images/a_dot_ham.jpeg
 

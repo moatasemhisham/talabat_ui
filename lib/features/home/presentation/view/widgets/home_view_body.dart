@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:talabat_ui/features/home/presentation/view/widgets/offers_view/offers_view.dart';
 import 'package:talabat_ui/features/home/presentation/view/widgets/order_now_list.dart';
 
 import 'categories_scrollable_list.dart';
@@ -9,15 +10,21 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          const CategoriesScrollableList(),
-          FiltersByList(),
-          OrderNowList(),
-          Text('UI'),
-        ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 5),
+        color: Colors.amberAccent,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: const [
+            CategoriesScrollableList(),
+            FiltersByList(),
+            OrderNowList(),
+            OffersView(),
+            Text('UI'),
+          ],
+        ),
       ),
     );
   }
