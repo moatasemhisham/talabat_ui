@@ -52,7 +52,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           icon: const Icon(
             Icons.search_rounded,
             color: Colors.black,
-            size: 40,
+            size: 30,
           ),
         ),
         const SizedBox(width: 9)
