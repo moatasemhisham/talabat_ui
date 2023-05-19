@@ -76,6 +76,10 @@ flutter:
     - assets/images/McDonald's.png
     - assets/images/McLogo.png
     - assets/images/mcLogoSvg.svg
+    - assets/images/Dominos.jpg
+    - assets/images/karam_el-sham_Offer.jpeg
+    - assets/images/dominosLogo.png
+    - assets/images/karamLogo.jpg
 
   #   - images/a_dot_ham.jpeg
 

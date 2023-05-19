@@ -25,10 +25,10 @@ class OfferDetails extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration: const BoxDecoration(
-          // borderRadius: BorderRadius.circular(1),
-          //TODO: Ask Mohamed why the border is not working
-          color: kBackGroundColor,
-        ),
+            // borderRadius: BorderRadius.circular(1),
+            //TODO: Ask Mohamed why the border is not working
+            // color: kBackGroundColor,
+            ),
         child: Column(
           children: [
             RestaurantDetailsBar(

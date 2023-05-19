@@ -3,7 +3,6 @@ import 'package:talabat_ui/features/home/presentation/view/widgets/offers_view/o
 import 'package:talabat_ui/features/home/presentation/view/widgets/offers_view/offer_image.dart';
 
 import '../../../../../../constants.dart';
-import '../../../../../../generated/assets.dart';
 
 class OffersView extends StatelessWidget {
   const OffersView({Key? key}) : super(key: key);
@@ -40,9 +39,9 @@ class OfferCard extends StatelessWidget {
     return [
       const OfferItem(
         offerImage: OfferImage(
-          offerImagePath: Assets.mcOfferLogo,
+          offerImagePath: 'assets/images/McDonald\'s.png',
           offerType: '20% Discount',
-          restaurantLogoPath: Assets.mcLogo,
+          restaurantLogoPath: 'assets/images/McLogo.png',
         ),
         offerDetails: OfferDetails(
           restaurantName: 'McDonald\'s',
@@ -51,6 +50,66 @@ class OfferCard extends StatelessWidget {
           deliveryCost: 12.00,
           restaurantOverallRate: 4.6,
           reviewsNum: 22,
+        ),
+      ),
+      const OfferItem(
+        offerImage: OfferImage(
+          offerImagePath: 'assets/images/McDonald\'s.png',
+          offerType: '20% Discount',
+          restaurantLogoPath: 'assets/images/McLogo.png',
+        ),
+        offerDetails: OfferDetails(
+          restaurantName: 'McDonald\'s',
+          restaurantCategory: 'Burger',
+          deliveryTimeInMin: 45,
+          deliveryCost: 12.00,
+          restaurantOverallRate: 4.6,
+          reviewsNum: 22,
+        ),
+      ),
+      const OfferItem(
+        offerImage: OfferImage(
+          offerImagePath: 'assets/images/McDonald\'s.png',
+          offerType: '20% Discount',
+          restaurantLogoPath: 'assets/images/McLogo.png',
+        ),
+        offerDetails: OfferDetails(
+          restaurantName: 'McDonald\'s',
+          restaurantCategory: 'Burger',
+          deliveryTimeInMin: 45,
+          deliveryCost: 12.00,
+          restaurantOverallRate: 4.6,
+          reviewsNum: 22,
+        ),
+      ),
+      const OfferItem(
+        offerImage: OfferImage(
+          offerImagePath: 'assets/images/karam_el-sham_Offer.jpeg',
+          offerType: 'Free Delivery',
+          restaurantLogoPath: 'assets/images/karamLogo.jpg',
+        ),
+        offerDetails: OfferDetails(
+          restaurantName: 'Karam EL-Sham',
+          restaurantCategory: 'Syrian Food',
+          deliveryTimeInMin: 20,
+          deliveryCost: 00,
+          restaurantOverallRate: 4.5,
+          reviewsNum: 12,
+        ),
+      ),
+      const OfferItem(
+        offerImage: OfferImage(
+          offerImagePath: 'assets/images/Dominos.jpg',
+          offerType: '15% Discount',
+          restaurantLogoPath: 'assets/images/dominosLogo.png',
+        ),
+        offerDetails: OfferDetails(
+          restaurantName: 'Domino\'s',
+          restaurantCategory: 'Pizza',
+          deliveryTimeInMin: 30,
+          deliveryCost: 10.00,
+          restaurantOverallRate: 4.2,
+          reviewsNum: 30,
         ),
       ),
     ];
@@ -71,6 +130,7 @@ class OfferItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * .6,
+      // height: MediaQuery.of(context).size.height * .3,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         color: kBackGroundColor,

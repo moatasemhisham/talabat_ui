@@ -26,12 +26,20 @@ class FiltersByList extends StatelessWidget {
 
   List<FilterItem> filterItemsList() {
     return [
-      FilterItem(
+      const FilterItem(
         filterTitle: 'Pickup',
       ),
-      const FilterItem(filterTitle: 'Price ', haveIcon: true),
-      const FilterItem(filterTitle: 'Above 4 Stars', haveIcon: true),
-      const FilterItem(filterTitle: 'Below 30 min'),
+      const FilterItem(
+        filterTitle: 'Price ',
+        haveIcon: true,
+      ),
+      const FilterItem(
+        filterTitle: 'Above 4 Stars',
+        haveIcon: true,
+      ),
+      const FilterItem(
+        filterTitle: 'Below 30 min',
+      ),
       const FilterItem(
         filterTitle: 'Vegetarian',
       ),
@@ -55,7 +63,7 @@ class FilterItem extends StatelessWidget {
         onPressed: () {},
         elevation: 0.0,
         color: kBackGroundColor,
-        padding: EdgeInsetsDirectional.only(start: 8.0, end: 8.0),
+        padding: const EdgeInsetsDirectional.only(start: 8.0, end: 8.0),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(37.0),
             side: const BorderSide(
