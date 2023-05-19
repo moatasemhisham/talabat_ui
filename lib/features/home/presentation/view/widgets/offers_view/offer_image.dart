@@ -16,10 +16,14 @@ class OfferImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset(
-          offerImagePath,
-          fit: BoxFit.cover,
-          // width: MediaQuery.of(context).size.width * .9,
+        Container(
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+          child: Image.asset(
+            height: MediaQuery.of(context).size.height * .2,
+            width: MediaQuery.of(context).size.width * .6,
+            offerImagePath,
+            fit: BoxFit.fill,
+          ),
         ),
         Positioned(
           top: 10,
@@ -27,7 +31,7 @@ class OfferImage extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
               color: Colors.orange,
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(50),
             ),
             child: Padding(
               padding: const EdgeInsets.all(7.0),

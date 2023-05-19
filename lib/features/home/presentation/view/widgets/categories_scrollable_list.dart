@@ -9,7 +9,7 @@ class CategoriesScrollableList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      padding: EdgeInsetsDirectional.only(start: 8.0),
+      padding: const EdgeInsetsDirectional.only(start: 8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -17,12 +17,11 @@ class CategoriesScrollableList extends StatelessWidget {
         // crossAxisAlignment: CrossAxisAlignment.center,
         children: List.generate(
           listCategoriesItem().length,
-              (index) =>
-              CategoryCard(
-                ctegorItem: listCategoriesItem()[index],
-                // title: listCategoriesItem()[index].title,
-                // imagePath: listCategoriesItem()[index].imagePath,
-              ),
+          (index) => CategoryCard(
+            categoriesItem: listCategoriesItem()[index],
+            // title: listCategoriesItem()[index].title,
+            // imagePath: listCategoriesItem()[index].imagePath,
+          ),
         ),
       ),
     );
@@ -77,11 +76,11 @@ class CategoriesScrollableList extends StatelessWidget {
 class CategoryCard extends StatelessWidget {
   // final String title;
   // final String imagePath;
-  final CategoriesItems ctegorItem;
-
+  final CategoriesItems categoriesItem;
 
   const CategoryCard({
-    Key? key, required this.ctegorItem,
+    Key? key,
+    required this.categoriesItem,
     // required this.title,
     // required this.imagePath,
   }) : super(key: key);
@@ -99,13 +98,13 @@ class CategoryCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Image.asset(
-            ctegorItem.imagePath,
+            categoriesItem.imagePath,
             height: 50,
             // width: ,
           ),
           const SizedBox(height: 5.0),
           Text(
-            ctegorItem.title,
+            categoriesItem.title,
             style: const TextStyle(
               fontSize: 14.0,
               // fontWeight: FontWeight.w400,

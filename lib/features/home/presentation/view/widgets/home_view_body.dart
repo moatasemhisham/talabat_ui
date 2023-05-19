@@ -13,7 +13,7 @@ class HomeViewBody extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 5),
+        padding: const EdgeInsets.symmetric(vertical: 5),
         color: Colors.amberAccent,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
