@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:talabat_ui/features/home/data_source/model/restaurant_card.dart';
 
-class OfferImage extends StatelessWidget {
-  final String offerImagePath;
-  final String offerType;
-  final String restaurantLogoPath;
+class RestaurantImageWidget extends StatelessWidget {
+  final OfferImageModel offerImageModel;
 
-  const OfferImage({
+  const RestaurantImageWidget({
     Key? key,
-    required this.offerImagePath,
-    required this.offerType,
-    required this.restaurantLogoPath,
+    required this.offerImageModel,
   }) : super(key: key);
 
   @override
@@ -17,42 +14,49 @@ class OfferImage extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+          clipBehavior: Clip.antiAlias,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(8),
+              topRight: Radius.circular(8),
+            ),
+          ),
           child: Image.asset(
             height: MediaQuery.of(context).size.height * .2,
             width: MediaQuery.of(context).size.width * .6,
-            offerImagePath,
+            offerImageModel.offerImagePath,
             fit: BoxFit.fill,
           ),
         ),
-        Positioned(
-          top: 10,
-          left: 10,
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.orange,
-              borderRadius: BorderRadius.circular(50),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(7.0),
-              child: Text(
-                offerType,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 10,
-                  fontWeight: FontWeight.bold,
+        if (offerImageModel.offerType != null)
+          Positioned(
+            top: 10,
+            left: 10,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.orange,
+                borderRadius: BorderRadius.circular(50),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(7.0),
+                child: Text(
+                  offerImageModel.offerType!,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
           ),
-        ),
         Positioned(
           bottom: 10,
           right: 10,
           child: Container(
             color: Colors.grey.shade50,
             child: Image.asset(
-              restaurantLogoPath,
+              offerImageModel.restaurantLogoPath,
               width: 30,
               height: 30,
               fit: BoxFit.cover,

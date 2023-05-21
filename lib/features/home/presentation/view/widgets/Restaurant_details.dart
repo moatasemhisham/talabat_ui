@@ -1,45 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:talabat_ui/constants.dart';
+import 'package:talabat_ui/features/home/data_source/model/restaurant_card.dart';
 
-class OfferDetails extends StatelessWidget {
-  final String restaurantName;
-  final String restaurantCategory;
-  final int deliveryTimeInMin;
-  final double deliveryCost;
-  final double restaurantOverallRate;
-  final int reviewsNum;
+class RestaurantDetailsWidget extends StatelessWidget {
+  final OfferDetailsModel offerDetailsModel;
 
-  const OfferDetails({
-    Key? key,
-    required this.restaurantName,
-    required this.restaurantCategory,
-    required this.deliveryTimeInMin,
-    required this.deliveryCost,
-    required this.restaurantOverallRate,
-    required this.reviewsNum,
-  }) : super(key: key);
+  const RestaurantDetailsWidget({Key? key, required this.offerDetailsModel})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        decoration: const BoxDecoration(
-            // borderRadius: BorderRadius.circular(1),
-            //TODO: Ask Mohamed why the border is not working
-            // color: kBackGroundColor,
-            ),
+        clipBehavior: Clip.antiAlias,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          // color: kBackGroundColor,
+        ),
         child: Column(
           children: [
             RestaurantDetailsBar(
-                restaurantName: restaurantName,
-                restaurantCategory: restaurantCategory),
+                restaurantName: offerDetailsModel.restaurantName,
+                restaurantCategory: offerDetailsModel.restaurantCategory),
             DeliveryInformation(
-                deliveryTimeInMin: deliveryTimeInMin,
-                deliveryCost: deliveryCost),
+                deliveryTimeInMin: offerDetailsModel.deliveryTimeInMin,
+                deliveryCost: offerDetailsModel.deliveryCost),
             RatingAndReviews(
-              restaurantOverallRate: restaurantOverallRate,
-              reviewsNum: reviewsNum,
+              restaurantOverallRate: offerDetailsModel.restaurantOverallRate,
+              reviewsNum: offerDetailsModel.reviewsNum,
             ),
           ],
         ),
@@ -64,7 +53,7 @@ class RatingAndReviews extends StatelessWidget {
       children: [
         Row(
           children: [
-            const Icon(
+            Icon(
               size: 17,
               Icons.star,
               color: Colors.amber,
