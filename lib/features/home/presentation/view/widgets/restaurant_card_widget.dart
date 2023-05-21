@@ -20,11 +20,19 @@ class RestaurantCardWidget extends StatelessWidget {
       child: Column(
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(listTitle),
+              Text(listTitle,
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
               TextButton(
                 onPressed: null,
-                child: Text('See more'),
+                child: Text(
+                  'See more',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                      color: Colors.orange),
+                ),
               ),
             ],
           ),
@@ -134,25 +142,33 @@ class RestaurantItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width * .6,
-      // height: MediaQuery.of(context).size.height * .3,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
+      child: Card(
+        // width: MediaQuery.of(context).size.width * .6,
+        // height: MediaQuery.of(context).size.height * .3,
+
+        // decoration: BoxDecoration(
+        // elevation: 5.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+
         color: kBackGroundColor,
-      ),
-      margin: const EdgeInsets.symmetric(horizontal: 5),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          RestaurantImageWidget(
-            offerImageModel: restaurantItem.offerImage,
-          ),
-          RestaurantDetailsWidget(
-            offerDetailsModel: restaurantItem.offerDetails,
-          ),
-        ],
+        // ),
+        margin: const EdgeInsets.symmetric(horizontal: 5),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            RestaurantImageWidget(
+              offerImageModel: restaurantItem.offerImage,
+            ),
+            RestaurantDetailsWidget(
+              offerDetailsModel: restaurantItem.offerDetails,
+            ),
+          ],
+        ),
       ),
     );
   }
